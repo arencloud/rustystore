@@ -1,0 +1,16 @@
+[package]
+name = "rustystore"
+version = "0.1.0"
+authors = ["Eduard Gevorkyan <egevorkyan@outlook.com>"]
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+thiserror = "1.0.38"
+rocket = { version = "0.5.0-rc.2", features = ["json"] }
+chrono = "0.4.23"
+wasm-bindgen = "0.2.83"
+serde = { version = "1.0.152", features = ["derive"] }
+serde_json = "1.0.91"
+recrypt = { version = "0.13.1", default_features = false, features = ["wasm"] }
