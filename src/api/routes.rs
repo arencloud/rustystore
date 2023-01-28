@@ -1,5 +1,6 @@
 use rocket::serde::json::{Json};
 use rocket::serde::{Serialize, Deserialize};
+use serde_json::{Map, Value};
 use crate::api::services;
 
 #[derive(Debug, Deserialize, Serialize)]
@@ -9,8 +10,8 @@ pub struct Msg {
 }
 
 #[rocket::get("/user/create-identity")]
-pub fn create_identity() -> Json<Msg> {
-    Json(services::get_msg("/user/create-identity"))
+pub fn create_identity() -> Json<Map<String, Value>> {
+    Json(services::create_identity())
 }
 //Final route - /user/grant-access/<idx>/<idy>
 #[rocket::get("/user/grant-access")]
